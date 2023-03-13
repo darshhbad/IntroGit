@@ -37,14 +37,24 @@ let items_title=document.getElementsByClassName('title');
 console.log(items_title)
 items_title[0].style.fontWeight='bold';
 items_title[0].style.color='green';
-let items=document.getElementsByClassName('list-group-item');
-console.log(items);
-items[2].style.backgroundColor='green';
 
-//items.style.backgroundColor='green'; doesn't work, we have to apply for loop
-for (var i=0;i<items.length;i++){
-    items[i].style.fontWeight='bold';
-}
+// let items=document.getElementsByClassName('list-group-item');
+// console.log(items);
+// items[2].style.backgroundColor='green';
+
+// //items.style.backgroundColor='green'; doesn't work, we have to apply for loop
+// for (var i=0;i<items.length;i++){
+//     items[i].style.fontWeight='bold';
+// }
+
+//Similarly for get by Tag name
+let li=document.getElementsByTagName('li');
+console.log(li);
+li[2].style.backgroundColor='green';
+for (var i=0;i<li.length;i++){
+   li[i].style.fontWeight='bold';}
+
+//QuerySelector
 
 
 
