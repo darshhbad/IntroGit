@@ -24,8 +24,8 @@ let headertitle=document.getElementById('header-title')
 console.log(headertitle);
 headertitle.textContent='Hello'; //doesn't pay attention to style
 headertitle.innerText='Goodbye'; //inner text pays attention to style, say, if style is display:none then it won't show on console
-//Innertext gets the content of all elements, including <script> and <style> elements
-//But Text content only returns the text value and not the Html tags
+//Innertext only returns the text value and not the Html tags 
+//But Text content gets the content of all elements, including <script> and <style> elements
 
 headertitle.innerHTML='<h3>Hello<h3>' //doesn't change h1 to h3 but uncludes an h3 inside h1
 headertitle.style.borderBottom="solid 3px #000"
@@ -33,10 +33,19 @@ headertitle.style.borderBottom="solid 3px #000"
 let header=document.getElementById('main-header')
 header.style.borderBlock="solid 3px #000"
 
-let items=document.getElementsByClassName('title');
-console.log(items)
-items[0].style.fontWeight='bold';
-items[0].style.color='green';
+let items_title=document.getElementsByClassName('title');
+console.log(items_title)
+items_title[0].style.fontWeight='bold';
+items_title[0].style.color='green';
+let items=document.getElementsByClassName('list-group-item');
+console.log(items);
+items[2].style.backgroundColor='green';
+
+//items.style.backgroundColor='green'; doesn't work, we have to apply for loop
+for (var i=0;i<items.length;i++){
+    items[i].style.fontWeight='bold';
+}
+
 
 
 
