@@ -1,60 +1,91 @@
 //Examine document object
 
-console.dir(document);
+// console.dir(document);
 
-console.log(document.domain);
-console.log(document.URL);
-console.log(document.title);
+// console.log(document.domain);
+// console.log(document.URL);
+// console.log(document.title);
 
-//to change document title from script: document.title=123;
-console.log(document.doctype);
-console.log(document.head);
-console.log(document.body);
-console.log(document.all);
-console.log(document.all[10]); //Not a good way as index changes when you change something in middle
-console.log(document.forms);
-console.log(document.links);
-console.log(document.forms[0]);
-console.log(document.images);
+// //to change document title from script: document.title=123;
+// console.log(document.doctype);
+// console.log(document.head);
+// console.log(document.body);
+// console.log(document.all);
+// console.log(document.all[10]); //Not a good way as index changes when you change something in middle
+// console.log(document.forms);
+// console.log(document.links);
+// console.log(document.forms[0]);
+// console.log(document.images);
 
-//get elements by id
+// //get elements by id
 
-console.log(document.getElementById('header-title'));
-let headertitle=document.getElementById('header-title')
-console.log(headertitle);
-headertitle.textContent='Hello'; //doesn't pay attention to style
-headertitle.innerText='Goodbye'; //inner text pays attention to style, say, if style is display:none then it won't show on console
-//Innertext only returns the text value and not the Html tags 
-//But Text content gets the content of all elements, including <script> and <style> elements
+// console.log(document.getElementById('header-title'));
+// let headertitle=document.getElementById('header-title')
+// console.log(headertitle);
+// headertitle.textContent='Hello'; //doesn't pay attention to style
+// headertitle.innerText='Goodbye'; //inner text pays attention to style, say, if style is display:none then it won't show on console
+// //Innertext only returns the text value and not the Html tags 
+// //But Text content gets the content of all elements, including <script> and <style> elements
 
-headertitle.innerHTML='<h3>Hello<h3>' //doesn't change h1 to h3 but uncludes an h3 inside h1
-headertitle.style.borderBottom="solid 3px #000"
+// headertitle.innerHTML='<h3>Hello<h3>' //doesn't change h1 to h3 but uncludes an h3 inside h1
+// headertitle.style.borderBottom="solid 3px #000"
 
-let header=document.getElementById('main-header')
-header.style.borderBlock="solid 3px #000"
+// let header=document.getElementById('main-header')
+// header.style.borderBlock="solid 3px #000"
 
-let items_title=document.getElementsByClassName('title');
-console.log(items_title)
-items_title[0].style.fontWeight='bold';
-items_title[0].style.color='green';
+// let items_title=document.getElementsByClassName('title');
+// console.log(items_title)
+// items_title[0].style.fontWeight='bold';
+// items_title[0].style.color='green';
 
-// let items=document.getElementsByClassName('list-group-item');
-// console.log(items);
-// items[2].style.backgroundColor='green';
+// // let items=document.getElementsByClassName('list-group-item');
+// // console.log(items);
+// // items[2].style.backgroundColor='green';
 
-// //items.style.backgroundColor='green'; doesn't work, we have to apply for loop
-// for (var i=0;i<items.length;i++){
-//     items[i].style.fontWeight='bold';
-// }
+// // //items.style.backgroundColor='green'; doesn't work, we have to apply for loop
+// // for (var i=0;i<items.length;i++){
+// //     items[i].style.fontWeight='bold';
+// // }
 
-//Similarly for get by Tag name
-let li=document.getElementsByTagName('li');
-console.log(li);
-li[2].style.backgroundColor='green';
-for (var i=0;i<li.length;i++){
-   li[i].style.fontWeight='bold';}
+// //Similarly for get by Tag name
+// // let li=document.getElementsByTagName('li');
+// // console.log(li);
+// // li[1].style.backgroundColor='green';
+// // for (var i=0;i<li.length;i++){
+// //    li[i].style.fontWeight='bold';}
+// // li[2].style="display:None"
 
-//QuerySelector
+// //QuerySelector selects only the first item by default
+// let header= document.querySelector('#main-header');
+// header.style.borderBottom="solid 4px #ccc";
+
+// let submit=document.querySelector('input[type="submit"]');
+// submit.value="SEND";
+
+// let item=document.querySelector('.list-group-item');
+
+// let lastitem=document.querySelector('.list-group-item:last-child');
+
+// let seconditem=document.querySelector('.list-group-item:nth-child(2)');
+// seconditem.style.color="green";
+
+// //QueryselctorAll works like getelementsbyclass/tagname
+
+let titles=document.querySelectorAll('.title');
+console.log(titles);
+
+let odd=document.querySelectorAll('li:nth-child(odd)');
+for (let i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor='green';
+}
+
+let seconditems=document.querySelectorAll('li:nth-child(even)');
+seconditems[0].style.color='green';
+
+
+
+
+
 
 
 
