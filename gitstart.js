@@ -71,23 +71,75 @@
 
 // //QueryselctorAll works like getelementsbyclass/tagname
 
-let titles=document.querySelectorAll('.title');
-console.log(titles);
+// let titles=document.querySelectorAll('.title');
+// console.log(titles);
 
-let odd=document.querySelectorAll('li:nth-child(odd)');
-for (let i=0;i<odd.length;i++){
-    odd[i].style.backgroundColor='green';
-}
+// let odd=document.querySelectorAll('li:nth-child(odd)');
+// for (let i=0;i<odd.length;i++){
+//     odd[i].style.backgroundColor='green';
+// }
 
-let seconditems=document.querySelectorAll('li:nth-child(even)');
-seconditems[0].style.color='green';
+// let seconditems=document.querySelectorAll('li:nth-child(even)');
+// seconditems[0].style.color='green';
 
+//----------------------------------------------------------------------------------------
+//Traversing the DOM
+let itemlist=document.querySelector('#items');
+// //Parent-node
+// console.log(itemlist.parentNode);
+// itemlist.parentNode.style.backgroundColor='grey'
 
+// console.log(itemlist.parentNode.parentNode);
 
+// //ParenElement and parent node can be used intechangeably
 
+// console.log(itemlist.parentElement);
 
+//CHildNode
 
+// console.log(itemlist.childNodes); //also includes line break by default
 
+// console.log(itemlist.children); //does not include line breaks
+// console.log(itemlist.children[1]);
+// itemlist.children[1].style.backgroundColor='yellow';
+
+// //FirstChild
+// console.log(itemlist.firstChild) //include line breaks
+// console.log(itemlist.lastChild)
+// //Firstelement child
+
+// console.log(itemlist.firstElementChild);
+// console.log(itemlist.lastElementChild);
+// //itemlist.firstElementChild.textContent='Hello1';
+
+// itemlist.firstChild.textContent='Hello World';
+
+// let containerlist=document.querySelector('.container');
+// console.log(containerlist.childNodes);
+// containerlist.firstChild.textContent='Hello World';
+
+// //nextSibling
+// console.log(itemlist.nextSibling); //text/line breaks
+// console.log(itemlist.nextElementSibling);
+
+// //previous sibling
+// console.log(itemlist.previousSibling); //text/line breaks
+// console.log(itemlist.previousElementSibling);
+// itemlist.previousElementSibling.style.color='green';
+
+//create element
+//create a div
+let newDiv=document.createElement('div');
+newDiv.className="hello";
+newDiv.id="Hello1"
+newDiv.setAttribute('title','Hello Div');
+let newDivtext=document.createTextNode('Hello World')
+newDiv.appendChild(newDivtext);
+let container=document.querySelector('header .container');
+let h1=document.querySelector('header h1')
+newDiv.style.fontSize="30px";
+container.insertBefore(newDiv,h1);
+console.log(newDiv);
 
 
 
